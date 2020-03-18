@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // learn dart ... switch
+  // learn dart ... while loop
 
-  var command = 'OPEN';
-
-  switch(command){
-    case  'CLOSED':
-    excuateClosed();
-    break;
-    case 'PENDING':
-    excuatePending();
-    break;
-    case 'open':
-    excuateOpen();
-    break;
-    default:
-    excuateUnKnown();
+  bool running = true;
+  int count = 0;
+  while(running){
+    print("Hello World $count");
+    if(count == 5){
+      running= false;
+    }else{
+      count++;
+    }
   }
-
 }
