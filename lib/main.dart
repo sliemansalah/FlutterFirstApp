@@ -1,33 +1,24 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // learn dart ... using functions
-  printValue();
-  sayHello(10);
+  // learn dart ... object orianted
+  var car1= new Car();
+  print(car1.color);
+  print(car1.speed);
+  car1.doDrive(); 
 
-  if(result("OK")){
-    print("ok methods");
-  } else {
-    print("not ok methods");
-  }
+  var car2 = new Car();
+  car2.color = 'yellow';
+  car2.speed = 200;
+  car2.doDrive();
+  
 }
 
-void printValue(){
-  print("Hello World");
-  print("Hi me");
-  print("test");
-}
+class Car {
+  String color = "red";
+  int speed = 100;
 
-void sayHello(int count){
-  for(int i=0; i<=count;i++){
-    print("Hello $i");
-  }
-}
-
-bool result(String isOk) {
-  if(isOk =='OK') {
-    return true;
-  } else {
-    return false;
+  void doDrive(){
+    print("driving :) $color car in $speed K/H");
   }
 }
