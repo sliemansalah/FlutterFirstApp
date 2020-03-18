@@ -1,23 +1,33 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // learn dart ... for loop
+  // learn dart ... using functions
+  printValue();
+  sayHello(10);
 
-  var arr= [1,2,3,4,5];
-
-  for(int i=0;i<=5;i++){
-    print("count $i");
+  if(result("OK")){
+    print("ok methods");
+  } else {
+    print("not ok methods");
   }
-  for(int i=0;i<=arr.length - 1;i++){
-    print("array element " + arr[i].toString());
+}
+
+void printValue(){
+  print("Hello World");
+  print("Hi me");
+  print("test");
+}
+
+void sayHello(int count){
+  for(int i=0; i<=count;i++){
+    print("Hello $i");
   }
+}
 
-  List<String> arrlist = new List<String>();
-  arrlist.add("ahmad");
-  arrlist.add("mohammed");
-  arrlist.add("salah");
-
-  arr.forEach((str){
-    print("List element " + str.toString());
-  });
+bool result(String isOk) {
+  if(isOk =='OK') {
+    return true;
+  } else {
+    return false;
+  }
 }
