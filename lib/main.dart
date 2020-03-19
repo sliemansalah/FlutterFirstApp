@@ -1,25 +1,31 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // learn dart ... static vars and methods
-  // var animal = Animal();
-  // animal.color="Black";
-  // animal.walk();
-  // var animal2= Animal();
+  // learn dart ... function and Lambda expression
+  // var addMyNumbers= (int x, int y) {
+  //   int result = x + y;
+  //   print(result);
+  // };
 
-  // Animal.color = "Black";
-  Animal.walk();
+  // Function addMyNumbers= (int x, int y) {
+  //   int result = x + y;
+  //   print(result);
+  // };
 
-  // Animal.color = null;
-  // static reserved fixed on memory.
+  
+  // Function addMyNumbers= (int x, int y) {
+  //   // int result = x + y;
+  //   // return result;
+  //   return x + y ; 
+  // };
 
+   Function addMyNumbers= (int x, int y) => print(x + y);
+
+  addMyNumbers(1, 2);
+  // print(addMyNumbers(1, 2));
 }
 
-class Animal {
-  static const String color = "Black";
-
-  static void walk(){
-    print("Animal is walking");
-  }
+int addNumbers(int x, int y) {
+  return x + y;
 }
 
