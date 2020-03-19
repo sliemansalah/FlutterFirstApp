@@ -1,31 +1,30 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // learn dart ... function and Lambda expression
-  // var addMyNumbers= (int x, int y) {
-  //   int result = x + y;
-  //   print(result);
-  // };
+  // learn dart ... Collections
+  //index    0  1   2
+  var arr = [1, 2 , 3];
 
-  // Function addMyNumbers= (int x, int y) {
-  //   int result = x + y;
-  //   print(result);
-  // };
+  // List<int> mylist = List(5); /* index =  0 -> 4 */
 
-  
-  // Function addMyNumbers= (int x, int y) {
-  //   // int result = x + y;
-  //   // return result;
-  //   return x + y ; 
-  // };
+    List<int> mylist = [111,222, 333]; /* index =  0 -> 4 */
 
-   Function addMyNumbers= (int x, int y) => print(x + y);
+  mylist[0] = 11;
+  mylist[1] = 15;
+  mylist[2] = 18;
+  mylist[3] = 19;
+  // mylist[4] = 25;
+  //mylist[5] = 25; //make exception
 
-  addMyNumbers(1, 2);
-  // print(addMyNumbers(1, 2));
+  print(mylist[4]);
+
+  mylist.forEach((val) => print(val));
+
+  // mylist.add(22);
+  // mylist.removeAt(2);
+  // mylist.remove(22);
+  // mylist.clear();
+
 }
 
-int addNumbers(int x, int y) {
-  return x + y;
-}
 
