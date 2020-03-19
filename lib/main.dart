@@ -1,44 +1,43 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // learn dart ... Constructor in Inheritance
-  // var dog1 = Dog();
-  // var dog1 = Dog(1);
-    var dog1 = Dog(1,"Black");
+  // learn dart ... Polymarphism
+
+  var dog = Dog();
+  dog.walk();
+  dog.run();
+  dog.eat();
 
 }
 
-class Animal {
-  String color;
-
-  Animal(String Color){
-    this.color = Color;
-    print("Animal Cons");
-  }
-
-  Animal.animalNamedCons(){
-    print("Animal Named Cons Class");
+class Carnivores {
+  void eat() {
+    print("animal is eating");
   }
 }
-
-class Dog extends Animal {
-   int length;
-    // Dog(int len){ // as Dog : super() by default
-    //   this.length = len;
-    //   print("Dog Class Cons");
-    // }
-
-    //  Dog(int len) : super("Black"){
-    //   this.length = len;
-    //   print("Dog Class Cons $len m class cons ");
-
-    Dog(int len, String color) : super("Black"){
-      this.length = len;
-      print("Dog Class Cons $len m class cons ");
-    }
-
-    Dog.namedCons() :super("Blue") { // :super.animalNamedCons
-      print("Dog named Cons Class");
-    }
+abstract class Animal { // abstract class, not create instance
+  void walk();
+  void run() {
+    print("animal is running");
+  }
 }
 
+// class Dog extends Animal, Carnivores{ can't make multible inhritance
+class Dog implements Carnivores, Animal{
+  // class Dog extends Animal implements Carnivores{
+  void walk(){
+    print("dog is walking");
+  }
+
+  void run(){
+    // super.run(); can't use as implement
+    print("dog is running");
+  }
+
+  // @override  // not must written
+  void eat() {
+    // super.run(); can't use as implement
+    // super.walk(); // can't be used.
+    print("dog is eating");
+  }
+}
