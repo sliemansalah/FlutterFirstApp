@@ -1,30 +1,43 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // learn dart ... Collections
-  //index    0  1   2
-  var arr = [1, 2 , 3];
+  // learn dart ... Sets and Maps
 
-  // List<int> mylist = List(5); /* index =  0 -> 4 */
+  Set<int> mylist = Set();
+  mylist.add(11);
+  mylist.add(22);
+  mylist.add(13);
+  mylist.add(14);
 
-    List<int> mylist = [111,222, 333]; /* index =  0 -> 4 */
+  mylist.forEach((val)=>print(val));
 
-  mylist[0] = 11;
-  mylist[1] = 15;
-  mylist[2] = 18;
-  mylist[3] = 19;
-  // mylist[4] = 25;
-  //mylist[5] = 25; //make exception
+  for(int i =0; i<mylist.length - 1 ; i++) {
+    // print(mylist[i]); not work
+  }
 
-  print(mylist[4]);
+  Set<String> countries = Set.from({"Eygpt", "China", "USA"});
+  countries.add("UAE");
+  countries.add("Palestine");
+  countries.forEach((val) => print(val));
 
-  mylist.forEach((val) => print(val));
 
-  // mylist.add(22);
-  // mylist.removeAt(2);
-  // mylist.remove(22);
-  // mylist.clear();
+  Map<String, String> countries2 = Map();
+    countries2["EGY"] = "EGYPT";
+    countries2["CHI"] = "China";
+    countries2["PAL"] = "Palestine";
+    print(countries2["EGY"]);
+    countries2.remove("CHI");
+    var isexisit;
+    if(countries2.containsKey("PAL")){
+      isexisit=  true;
+    }
+    countries2.forEach((k,v) => print("key : $k, value: $v"));
 
+  Map<String, int> sutdentsNumbers = {
+    "Ahmed": 90,
+    "Mohammed": 80,
+    "Mahmood": 70
+  }
 }
 
 
