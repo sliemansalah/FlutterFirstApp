@@ -1,42 +1,44 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // learn dart ... Sets and Maps
+  // learn dart ... Handling Exceptions
 
-  Set<int> mylist = Set();
-  mylist.add(11);
-  mylist.add(22);
-  mylist.add(13);
-  mylist.add(14);
+  var myclass= myClass();
+  myclass(0);
 
-  mylist.forEach((val)=>print(val));
+}
 
-  for(int i =0; i<mylist.length - 1 ; i++) {
-    // print(mylist[i]); not work
+class myClass {
+  void call(int n1){
+    // try {
+    //   int result = 12 ~/ n1;  // ~ to be res int
+    // print("the result is $result");
+    // } on IntegerDivisionByZeroException {
+    //   print("Do not div by 0");
+    // }catch(m, s){
+    //   print("the error is $m");
+    //   // print(s);
+    // }finally {
+    //   print("code must run");
+    // }
+
+     try {
+    deposit(n1);
+  } catch (m) {
+    print("the error = $m");
+  }
   }
 
-  Set<String> countries = Set.from({"Eygpt", "China", "USA"});
-  countries.add("UAE");
-  countries.add("Palestine");
-  countries.forEach((val) => print(val));
-
-
-  Map<String, String> countries2 = Map();
-    countries2["EGY"] = "EGYPT";
-    countries2["CHI"] = "China";
-    countries2["PAL"] = "Palestine";
-    print(countries2["EGY"]);
-    countries2.remove("CHI");
-    var isexisit;
-    if(countries2.containsKey("PAL")){
-      isexisit=  true;
+  void deposit(int money){
+    if(money<0){
+      throw MyEx();
     }
-    countries2.forEach((k,v) => print("key : $k, value: $v"));
+  }
+}
 
-  Map<String, int> sutdentsNumbers = {
-    "Ahmed": 90,
-    "Mohammed": 80,
-    "Mahmood": 70
+class MyEx implements Exception { 
+  String errorMessage (){
+    return "Don't do this message";
   }
 }
 
