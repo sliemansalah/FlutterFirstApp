@@ -3,8 +3,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    new MaterialApp(
+  runApp(MyFlutterApp());
+}
+
+class MyFlutterApp extends StatelessWidget {
+  Widget build(BuildContext context) { // Create widget
+    return new MaterialApp(
       title: "First App",
       home:Scaffold(
         appBar: AppBar(
@@ -16,10 +20,13 @@ void main() {
         child: Text(
         "Hello World",
         textDirection: TextDirection.ltr,
+        style: TextStyle(color: Colors.white,fontSize: 30),
+
       )
     )
       ),
       ),
-    )
-  );
+    );
+  }
+
 }
