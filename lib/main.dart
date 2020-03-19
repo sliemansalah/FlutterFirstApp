@@ -6,7 +6,11 @@ void main() {
   runApp(
     new MaterialApp(
       title: "First App",
-      home:new Material(
+      home:Scaffold(
+        appBar: AppBar(
+        title: Text("Hello Flutter"),
+        ),
+        body: new Material(
         color: Colors.lightBlueAccent,
         child: Center(
         child: Text(
@@ -14,8 +18,8 @@ void main() {
         textDirection: TextDirection.ltr,
       )
     )
-      )
+      ),
+      ),
     )
-   
   );
 }
